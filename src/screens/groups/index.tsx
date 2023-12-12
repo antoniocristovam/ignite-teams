@@ -5,6 +5,7 @@ import { Highlight } from "@components/highlight";
 import { GroupCard } from "@components/groupCard";
 import { FlatList } from "react-native";
 import { ListEmpty } from "@components/listInput";
+import { Button } from "@components/button";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
@@ -23,6 +24,7 @@ export function Groups() {
         renderItem={({ item }) => <GroupCard title={item} />}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
       />
+      <Button title="Criar nova turma" />
     </Container>
   );
 }
