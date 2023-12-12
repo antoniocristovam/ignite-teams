@@ -21,7 +21,6 @@ export function Groups() {
         keyExtractor={(item) => item}
         renderItem={({ item }) => <GroupCard title={item} />}
       />
-      {/* <GroupCard title="Galera do ignite" /> */}
     </Container>
   );
 }
