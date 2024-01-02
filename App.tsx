@@ -1,7 +1,7 @@
 import { ActivityIndicator, StatusBar } from "react-native";
 import React from "react";
 import theme from "@theme/index";
-import { NewGroup } from "@screens/newGroup/index";
+import { Players } from "@screens/players";
 import { ThemeProvider } from "styled-components";
 import {
   useFonts,
@@ -23,7 +23,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <NewGroup /> : <Loading />}
+      {fontsLoaded ? <Players /> : <Loading />}
     </ThemeProvider>
   );
 }
