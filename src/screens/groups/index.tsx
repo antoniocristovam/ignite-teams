@@ -1,11 +1,16 @@
+// Import
 import React, { useState } from "react";
+
+// Styles
 import { Container } from "./styles";
+
+// Component
+import { FlatList } from "react-native";
 import { Header } from "@components/header";
+import { Button } from "@components/button";
 import { Highlight } from "@components/highlight";
 import { GroupCard } from "@components/groupCard";
-import { FlatList } from "react-native";
 import { ListEmpty } from "@components/listInput";
-import { Button } from "@components/button";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
