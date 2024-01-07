@@ -1,4 +1,7 @@
+// Import
 import React from "react";
+
+// Styles
 import logoImg from "@assets/logo.png";
 import { BackButton, BackIcon, Container, Logo } from "./styles";
 
