@@ -1,4 +1,7 @@
+// Import
 import React from "react";
+
+// Styles
 import { Container, Title, SubTitle } from "./styles";
 
 type Props = {
