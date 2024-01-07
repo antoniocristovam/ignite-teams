@@ -1,4 +1,7 @@
+// Import
 import React from "react";
+
+// Styles
 import { Container, Message } from "./styles";
 
 type Props = {
