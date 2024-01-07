@@ -12,7 +12,7 @@ export function Players() {
         title="Nome da turma"
         subtitle="adicione a galera e separe os times"
       />
-      <ButtonIcon />
+      <ButtonIcon icon="home" type="SECONDARY" />
     </Container>
   );
 }
