@@ -1,11 +1,11 @@
 // Import
+import { FlatList } from "react-native";
 import React, { useState } from "react";
 
 // Styles
 import { Container } from "./styles";
 
 // Component
-import { FlatList } from "react-native";
 import { Header } from "@components/header";
 import { Button } from "@components/button";
 import { Highlight } from "@components/highlight";
