@@ -1,9 +1,14 @@
+// Import
 import React from "react";
+
+// Styles
 import { Container, Form } from "./styles";
+
+// Component
+import { Input } from "@components/input";
 import { Header } from "@components/header";
 import { Highlight } from "@components/highlight";
 import { ButtonIcon } from "@components/buttonIncon";
-import { Input } from "@components/input";
 
 export function Players() {
   return (
