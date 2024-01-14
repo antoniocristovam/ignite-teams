@@ -1,6 +1,6 @@
-import { StatusBar } from "react-native";
 import React from "react";
 import theme from "@theme/index";
+import { StatusBar } from "react-native";
 import { Players } from "@screens/players";
 import { ThemeProvider } from "styled-components";
 import {
