@@ -1,13 +1,16 @@
+// import
 import React from "react";
-import theme from "@theme/index";
 import { StatusBar } from "react-native";
-import { Players } from "@screens/players";
 import { ThemeProvider } from "styled-components";
 import {
   useFonts,
   Roboto_700Bold,
   Roboto_400Regular,
 } from "@expo-google-fonts/roboto";
+
+// Component
+import theme from "@theme/index";
+import { Players } from "@screens/players";
 import { Loading } from "@components/loading";
 
 export default function App() {
