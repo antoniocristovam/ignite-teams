@@ -1,4 +1,4 @@
-import { ActivityIndicator, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import React from "react";
 import theme from "@theme/index";
 import { Players } from "@screens/players";
