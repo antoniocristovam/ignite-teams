@@ -5,13 +5,12 @@ import styled, { css } from "styled-components/native";
 export const Container = styled(TouchableOpacity)`
   width: 100%;
   height: 90px;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_500};
+  padding: 24px;
   border-radius: 6px;
+  margin-bottom: 12px;
   flex-direction: row;
   align-items: center;
-
-  padding: 24px;
-  margin-bottom: 12px;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_500};
 `;
 
 export const Title = styled.Text`

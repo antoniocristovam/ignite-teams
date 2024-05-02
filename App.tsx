@@ -22,9 +22,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar
+        translucent
         barStyle="light-content"
         backgroundColor="transparent"
-        translucent
       />
       {fontsLoaded ? <Players /> : <Loading />}
     </ThemeProvider>
