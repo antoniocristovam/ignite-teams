@@ -11,10 +11,11 @@ import { Header } from "@components/header";
 import { Highlight } from "@components/highlight";
 import { ButtonIcon } from "@components/buttonIncon";
 import { Filter } from "@components/filter";
+import { PlayerCard } from "@components/playerCard";
 
 export function Players() {
   const [team, setTeam] = useState<string>("Time A");
-  const [players, setPlayers] = useState(["1"]);
+  const [players, setPlayers] = useState(["Antonio", "teste"]);
   return (
     <Container>
       <Header showBackButton />
@@ -41,6 +42,13 @@ export function Players() {
         />
         <NumberOfPlayers>{players.length}</NumberOfPlayers>
       </HeaderList>
+      <FlatList
+        data={players}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <PlayerCard onRemove={() => {}} name={item} />
+        )}
+      />
     </Container>
   );
 }
