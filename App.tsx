@@ -1,7 +1,7 @@
 // import
 import React from "react";
 import { StatusBar } from "react-native";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components/native";
 import {
   useFonts,
   Roboto_700Bold,
@@ -10,9 +10,8 @@ import {
 
 // Component
 import theme from "@theme/index";
-import { Players } from "@screens/players";
-import { Loading } from "@components/loading";
 import { Groups } from "@screens/groups";
+import { Loading } from "@components/loading";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +26,7 @@ export default function App() {
         barStyle="light-content"
         backgroundColor="transparent"
       />
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
 }
