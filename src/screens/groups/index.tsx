@@ -28,6 +28,7 @@ export function Groups() {
         }
         renderItem={({ item }) => <GroupCard title={item} />}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        showsHorizontalScrollIndicator={false}
       />
       <Button title="Criar nova turma" />
     </Container>

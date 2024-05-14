@@ -9,11 +9,11 @@ import { FlatList } from "react-native";
 import { Input } from "@components/input";
 import { Header } from "@components/header";
 import { Filter } from "@components/filter";
+import { Button } from "@components/button";
 import { Highlight } from "@components/highlight";
 import { ListEmpty } from "@components/listInput";
 import { PlayerCard } from "@components/playerCard";
-import { ButtonIcon } from "@components/buttonIncon";
-import { Button } from "@components/button";
+import { ButtonIcon } from "@components/buttonIcon";
 
 export function Players() {
   const [team, setTeam] = useState<string>("Time A");

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Icon, Name } from "./styles";
-import { ButtonIcon } from "@components/buttonIncon";
+import { ButtonIcon } from "@components/buttonIcon";
 
 type Props = {
   name: string;
