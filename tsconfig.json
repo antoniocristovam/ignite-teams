@@ -5,27 +5,12 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@theme/*": [
-        "./src/theme/*",
-      ],
-      "@utils/*": [
-        "./src/utils/*",
-      ],
-      "@assets/*": [
-        "./src/assets/*",
-      ],
-      "@router/*": [
-        "./src/router/*",
-      ],
-      "@screens/*": [
-        "./src/screens/*",
-      ],
-      "@storage/*": [
-        "./src/storage/*",
-      ],
-      "@components/*": [
-        "./src/components/*",
-      ],
+      "@theme/*": ["./src/theme/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@storage/*": ["./src/storage/*"],
+      "@components/*": ["./src/components/*"]
     }
   }
 }
