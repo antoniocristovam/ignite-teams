@@ -10,12 +10,19 @@ import { Input } from "@components/input";
 import { Button } from "@components/button";
 import { Header } from "@components/header";
 import { Highlight } from "@components/highlight";
+import { groupCreate } from "@storage/groups/groupCreate";
 
 export function NewGroup() {
   const [group, setGroup] = useState("");
   const navigation = useNavigation();
-  function handleNew() {
-    navigation.navigate("players", { group });
+
+  async function handleNew() {
+    try {
+      await groupCreate(group);
+      navigation.navigate("players", { group });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
