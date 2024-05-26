@@ -1,6 +1,6 @@
 // Import
 import React, { useState } from "react";
-import { FlatList } from "react-native";
+import { Alert, FlatList } from "react-native";
 
 // Styles
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
@@ -15,8 +15,12 @@ import { ListEmpty } from "@components/listInput";
 import { PlayerCard } from "@components/playerCard";
 import { ButtonIcon } from "@components/buttonIcon";
 import { useRoute } from "@react-navigation/native";
+import { AppError } from "@utils/AppError";
+import { playerAddByGroup } from "@storage/player/playerAddByGroup";
+import { playerGetByGroup } from "@storage/player/playerGetByGroup";
 
 export function Players() {
+  const [newPlayerName, setNewPlayerName] = useState<string>("");
   const [team, setTeam] = useState<string>("Time A");
   const [players, setPlayers] = useState("1");
 
@@ -26,13 +30,49 @@ export function Players() {
 
   const router = useRoute();
   const { group } = router.params as RouterParams;
+  async function handleAddPlayer() {
+    if (newPlayerName.trim().length === 0) {
+      return Alert.alert("Nova pessoa", "Nome da pessoa é obrigatório.");
+    }
+
+    const newPlayer = {
+      name: newPlayerName,
+      team,
+    };
+
+    try {
+      await playerAddByGroup(newPlayer, group);
+      const players = await playerGetByGroup(group);
+      console.log(players);
+    } catch (err) {
+      if (err instanceof AppError) {
+        return Alert.alert("Nova pessoa", err.message);
+      } else {
+        console.log(err);
+        Alert.alert(
+          "Nova pessoa",
+          "Não foi possível adicionar a pessoa. Tente novamente."
+        );
+      }
+    }
+  }
   return (
     <Container>
       <Header showBackButton />
       <Highlight title={group} subtitle="adicione a galera e separe os times" />
       <Form>
-        <Input placeholder="Nome da pessoa" autoCorrect={false} />
-        <ButtonIcon icon="add" />
+        <Input
+          onChangeText={setNewPlayerName}
+          placeholder="Nome da pessoa"
+          autoCorrect={false}
+        />
+        <ButtonIcon
+          onPress={() => {
+            console.log("entrou");
+            handleAddPlayer();
+          }}
+          icon="add"
+        />
       </Form>
       <HeaderList>
         <FlatList
