@@ -30,9 +30,10 @@ export function Groups() {
       setIsLoading(true);
       const data = await groupsGetAll();
       setGroups(data);
-      setIsLoading(false);
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   }
 
