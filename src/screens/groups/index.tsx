@@ -13,9 +13,11 @@ import { Highlight } from "@components/highlight";
 import { GroupCard } from "@components/groupCard";
 import { ListEmpty } from "@components/listInput";
 import { groupsGetAll } from "@storage/groups/groupGetAll";
+import { Loading } from "@components/loading";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const navigation = useNavigation();
 
@@ -25,8 +27,10 @@ export function Groups() {
 
   async function fetchGroups() {
     try {
+      setIsLoading(true);
       const data = await groupsGetAll();
       setGroups(data);
+      setIsLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -47,18 +51,22 @@ export function Groups() {
       <Header />
       <Highlight title="Turmas" subtitle="Jogue com a sua turma" />
 
-      <FlatList
-        data={groups}
-        keyExtractor={(item) => item}
-        ListEmptyComponent={
-          <ListEmpty message="Que tal cadastrar a primeira turma ? (:" />
-        }
-        renderItem={({ item }) => (
-          <GroupCard onPress={() => handleOpenGroup(item)} title={item} />
-        )}
-        contentContainerStyle={groups.length === 0 && { flex: 1 }}
-        showsHorizontalScrollIndicator={false}
-      />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <FlatList
+          data={groups}
+          keyExtractor={(item) => item}
+          ListEmptyComponent={
+            <ListEmpty message="Que tal cadastrar a primeira turma ? (:" />
+          }
+          renderItem={({ item }) => (
+            <GroupCard onPress={() => handleOpenGroup(item)} title={item} />
+          )}
+          contentContainerStyle={groups.length === 0 && { flex: 1 }}
+          showsHorizontalScrollIndicator={false}
+        />
+      )}
       <Button title="Criar nova turma" onPress={handleNewGroup} />
     </Container>
   );
